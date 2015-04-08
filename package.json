@@ -1,0 +1,53 @@
+{
+  "name": "gulp-rebase-css-urls",
+  "description": "A gulp plugin for rebasing all css urls.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/welldone-software/gulp-rebase-css-urls",
+  "author": {
+    "name": "Welldone Software Solutions Ltd.",
+    "email": "dani@welldone-software.com",
+    "url": "http://welldone-software.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:welldone-software/gulp-rebase-css-urls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/welldone-software/gulp-rebase-css-urls/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/welldone-software/gulp-rebase-css-urls/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "css",
+    "rebase",
+    "url"
+  ],
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "rework": "^1.0.1",
+    "rework-plugin-url": "^1.0.1",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-print": "^1.1.0",
+    "path": "^0.11.14",
+    "rimraf": "^2.3.2"
+  }
+}
