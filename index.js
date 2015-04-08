@@ -5,7 +5,7 @@ var rework = require('rework'),
     through = require('through2'),
     path = require('path');
 
-module.exports = function(destination){
+module.exports = function(base){
     return through.obj(function(file, enc, cb) {
         if (file.isNull()) {
             return; // ignore
@@ -21,7 +21,7 @@ module.exports = function(destination){
     });
 
     function adjust(file){
-        var prefix = path.relative(destination, path.dirname(file.path));
+        var prefix = path.relative(base, path.dirname(file.path));
         var css = file.contents.toString();
         return rework(css)
             .use(url(function(url) {
