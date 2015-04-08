@@ -64,7 +64,7 @@ And a bundle.css contents like so:
 .b{
     background-image: url("fldr/image.jpg");
 }
-``
+```
 
 ## Parameters
 
