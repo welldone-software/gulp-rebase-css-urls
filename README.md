@@ -4,7 +4,7 @@
 
 ## Overview
 
-The plugin is minimalistic and simple. It rebases all css urls to a chosen new base.
+The plugin is minimalistic and simple. It rebases css files urls to a new base.
 
 ## Example
 
@@ -24,7 +24,7 @@ Where 'file.css' contents are:
 }
 ```
 
-and 'file2.css':
+and 'file2.css' contents are:
 
 ```css
 .b{
@@ -32,7 +32,7 @@ and 'file2.css':
 }
 ```
 
-And the task
+And the task:
 
 ```js
 var rebaseCssUrls = require('gulp-rebase-css-urls'),
@@ -74,6 +74,9 @@ And a bundle.css contents like so:
 Type: `String`
 
 The new base url, comparing to initial file's src.
+
+## Testing
+Running the gulp file would concat `tests/input` files into `tests/actual` and compare the results to a static `tests/expected` directory, and make sure we got what we've expected.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Gulp](http://gulpjs.com/).
