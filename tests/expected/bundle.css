@@ -1,0 +1,15 @@
+.ccc {
+  background-image: url("a/image.jpg");
+}
+.aaa {
+  background-image: url("a/image.jpg");
+}
+.aaa2 {
+  background-image: url("/a/image.jpg");
+}
+.bbb {
+  background-image: url("a/image.jpg");
+}
+.bbb {
+  background-image: url("a/image.jpg");
+}

@@ -27,7 +27,7 @@ module.exports = function(base){
             .use(url(function(url) {
                 if(!path.isAbsolute(url)){
                     url = path.join(prefix, url);
-                    url = path.normalize(url).replace('\\', '/');
+                    url = path.normalize(url).replace(/\\/g, '/');
                 }
                 return url;
             }))
