@@ -80,9 +80,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
  - 0.0.1 - Basic features.
-
-## TODO
-Add comparison of actual and expected libraries
+ - 0.0.2 - Improved tests and added reporting.
 
 ## License
 [MIT](https://github.com/welldone-software/gulp-bundle-file/blob/master/LICENSE)

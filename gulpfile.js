@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     print = require('gulp-print'),
     concat = require('gulp-concat'),
     rimraf = require('rimraf'),
+    diff = require('gulp-diff'),
+    runSequence = require('run-sequence'),
     rebaseCssUrls = require('./index.js');
 
 var srcDir = 'tests/input',
@@ -26,6 +28,12 @@ gulp.task('run-test', ['copy-statics'], function(){
         .pipe(gulp.dest(dstDir));
 });
 
-gulp.task('default', ['clean'], function(){
-    gulp.start('run-test');
+gulp.task('check-results', function(){
+    return gulp.src(dstDir + '/bundle.css')
+        .pipe(diff(expectedDir))
+        .pipe(diff.reporter({ fail: true }));
+});
+
+gulp.task('default', function(cb){
+    runSequence('clean', 'run-test', 'check-results', cb);
 });
