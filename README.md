@@ -4,7 +4,7 @@
 
 ## Overview
 
-The plugin is minimalistic and simple. It rebases css files urls to a new base.
+The plugin is minimalistic and simple. It rebases a chosen css files stream urls to a new base url.
 
 ## Example
 
