@@ -25,7 +25,7 @@ module.exports = function(base){
         var css = file.contents.toString();
         return rework(css)
             .use(url(function(url) {
-                if(!path.isAbsolute(url) && !/^(data)/.test(url)){
+                if(!/^(data|\/|\w+:\/\/)/.test(url)){
                     url = path.join(prefix, url);
                     url = path.normalize(url).replace(/\\/g, '/');
                 }
