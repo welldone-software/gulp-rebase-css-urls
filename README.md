@@ -66,6 +66,8 @@ And a bundle.css contents like so:
 }
 ```
 
+Notice how both `.a` and `.b`'s URLs are still relative and based on the same base.
+
 ## Parameters
 
 `rebaseCssUrls(base)`
