@@ -8,23 +8,25 @@ The plugin is minimalistic and simple. It rebases a chosen css files stream urls
 
 ## Example
 
+For the following folder and file structure:
+
 ```
 + src
     - file.css
-    + fldr
+    + folder1
         - image.jpg
         - file2.css
 ```
 
-Where 'file.css' contents are:
+Where 'file.css' contents are relative to `src`:
 
 ```css
 .a{
-    background-image: url("fldr/image.jpg");
+    background-image: url("folder1/image.jpg");
 }
 ```
 
-and 'file2.css' contents are:
+and 'file2.css' contents are relative to `folder1`:
 
 ```css
 .b{
@@ -35,27 +37,29 @@ and 'file2.css' contents are:
 And the task:
 
 ```js
-var rebaseCssUrls = require('gulp-rebase-css-urls'),
+var srcDir = 'src',
+    destDir = 'dest',
+    rebaseCssUrls = require('gulp-rebase-css-urls'),
     concat = require('gulp-concat');
 
 gulp.task('concat-css-files', ['copy-image-file'], function(){
-    return gulp.src('src/**/*.css')
-        .pipe(rebaseCssUrls(srcDir))
+    return gulp.src(srcDir + '/**/*.css')
+        .pipe(rebaseCssUrls(srcDir)) //this makes .b's background-image url relative to srcDir
         .pipe(concat('bundle.css'))
-        .pipe(gulp.dest(dstDir));
+        .pipe(gulp.dest(destDir));
 });
 ```
 
-Results in a directory like so:
+So the results in the destination directory looks like this:
 
 ```
-+ dst
++ dest
     - bundle.css
     + fldr
         - image.jpg
 ```
 
-And a bundle.css contents like so:
+With the bundle.css contents like so:
 
 ```css
 .a{
@@ -66,7 +70,7 @@ And a bundle.css contents like so:
 }
 ```
 
-Notice how both `.a` and `.b`'s URLs are still relative and based on the same base.
+Notice how both `.a` and `.b`'s URLs are relative and based on the same base.
 
 ## Parameters
 
