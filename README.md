@@ -55,7 +55,7 @@ So the results in the destination directory looks like this:
 ```
 + dest
     - bundle.css
-    + fldr
+    + folder1
         - image.jpg
 ```
 
@@ -63,10 +63,10 @@ With the bundle.css contents like so:
 
 ```css
 .a{
-    background-image: url("fldr/image.jpg");
+    background-image: url("folder1/image.jpg");
 }
 .b{
-    background-image: url("fldr/image.jpg");
+    background-image: url("folder1/image.jpg");
 }
 ```
 
